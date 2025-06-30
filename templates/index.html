@@ -1,80 +1,617 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TravelGo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TravelGo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('static/images/travel-bg.jpg'); /* Ensure this image exists in static/images */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #e6f0ff 0%, #f9f9f9 100%);
+            color: #2c3e50;
+            min-height: 100vh;
+        }
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            position: relative;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+            background:  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
         }
-
-        /* Overlay for better readability */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-            z-index: 1;
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #fff 30%, #6dd5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
-        .content {
-            position: relative;
-            z-index: 2;
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            margin-right: 12px;
         }
-
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        .tagline {
+            font-size: 1.3rem;
+            margin: 18px 0 32px 0;
+            font-weight: 400;
+            color: #eaf6ff;
+            text-shadow: 0 2px 12px rgba(44,62,80,0.18);
         }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .button-container a {
-            display: inline-block;
-            background-color: #007bff; /* Blue */
-            color: white;
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 5px;
+        .explore-btn {
+            background: linear-gradient(90deg, #3498db, #6dd5fa);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 6px 24px rgba(52,152,219,0.15);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            display: inline-block;
         }
-
-        .button-container a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+        .explore-btn:hover {
+            background: linear-gradient(90deg, #217dbb, #4fc3f7);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .section {
+            max-width: 1100px;
+            margin: 48px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align:center; font-size:2rem; color:#3498db; font-weight:700; margin-bottom:10px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            padding: 32px 24px;
+            flex: 1 1 220px;
+            max-width: 260px;
+            min-width: 200px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(52,152,219,0.13);
+        }
+        .feature-card img {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 16px;
+        }
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 8px;
+        }
+        .feature-desc {
+            font-size: 0.98rem;
+            color: #555;
+        }
+        .aboutus {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            padding: 36px 32px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .aboutus h3 {
+            color: #3498db;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .aboutus p {
+            color: #444;
+            font-size: 1.08rem;
+            margin-bottom: 18px;
+        }
+        .about-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 18px;
+        }
+        .about-highlight {
+            background: #f7fbff;
+            border-radius: 12px;
+            padding: 18px 20px;
+            min-width: 160px;
+            max-width: 220px;
+            flex: 1 1 160px;
+            color: #217dbb;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(52,152,219,0.06);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.02rem;
+        }
+        .about-highlight i {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .team-member {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            padding: 24px 18px;
+            text-align: center;
+            max-width: 180px;
+            flex: 1 1 140px;
+        }
+        .team-member img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            object-fit: cover;
+        }
+        .team-member .name {
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 4px;
+        }
+        .team-member .role {
+            color: #555;
+            font-size: 0.98rem;
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .testimonial {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            padding: 28px 22px;
+            max-width: 320px;
+            min-width: 220px;
+            text-align: center;
+            position: relative;
+        }
+        .testimonial .avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+        .testimonial .name {
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 2px;
+        }
+        .testimonial .quote {
+            font-style: italic;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .testimonial .stars {
+            color: #ffdd57;
+            margin-bottom: 6px;
+        }
+        .partners {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .partner-logo {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(52,152,219,0.07);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            max-width: 160px;
+            min-height: 60px;
+        }
+        .partner-logo img {
+            max-width: 100px;
+            max-height: 40px;
+        }
+        .faq {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            padding: 32px 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 18px;
+        }
+        .faq-q {
+            color: #3498db;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 4px;
+        }
+        .faq-a {
+            color: #444;
+            font-size: 1.01rem;
+            display: none;
+            margin-bottom: 6px;
+        }
+        .faq-q.open + .faq-a {
+            display: block;
+        }
+        .blog-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .blog-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            padding: 0 0 18px 0;
+            max-width: 320px;
+            min-width: 220px;
+            text-align: left;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+        .blog-card .blog-title {
+            color: #3498db;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 12px 16px 6px 16px;
+        }
+        .blog-card .blog-excerpt {
+            color: #444;
+            font-size: 0.98rem;
+            margin: 0 16px 10px 16px;
+        }
+        .blog-card .read-more {
+            color: #217dbb;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 16px;
+            margin-top: auto;
+        }
+        .newsletter {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            padding: 36px 24px;
+            max-width: 420px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .newsletter input[type="email"] {
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #b3d8f7;
+            font-size: 1rem;
+            margin-right: 10px;
+            width: 60%;
+            max-width: 220px;
+        }
+        .newsletter button {
+            background: linear-gradient(90deg, #3498db, #6dd5fa);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .newsletter button:hover {
+            background: linear-gradient(90deg, #217dbb, #4fc3f7);
+        }
+        .footer {
+            background: linear-gradient(135deg, #3498db 60%, #6dd5fa 100%);
+            color: #fff;
+            text-align: center;
+            padding: 32px 20px 18px 20px;
+            margin-top: 60px;
+        }
+        .footer .socials {
+            margin-bottom: 12px;
+        }
+        .footer .socials a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.4rem;
+            transition: color 0.2s;
+        }
+        .footer .socials a:hover {
+            color: #ffdd57;
+        }
+        @media (max-width: 900px) {
+            .features, .how-it-works, .team, .testimonials, .partners, .blog-highlights {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero { padding: 40px 10px 24px 10px; min-height: 45vh; }
+            .section { padding: 0 8px; }
+            .features, .how-it-works, .team, .testimonials, .partners, .blog-highlights { gap: 18px; }
+            .feature-card, .step, .team-member, .testimonial, .partner-logo, .blog-card { max-width: 100%; min-width: 0; }
+            .newsletter, .faq { padding: 24px 8px; }
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Welcome to TravelGo!</h1>
-        <p>Your one-stop solution for seamless travel bookings.</p>
-        <div class="button-container">
-            <a href="/register">Register</a>
-            <a href="/login">Login</a>
+    <section class="hero">
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="24" cy="24" rx="22" ry="16" fill="#fff" fill-opacity="0.18"/>
+                <path d="M10 32L38 16M10 16L38 32" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="7" fill="#6dd5fa" stroke="#3498db" stroke-width="2.5"/>
+            </svg>
+            TravelGo
         </div>
-    </div>
+        <div class="tagline">Your journey begins here. Discover, book, and explore the world with ease.</div>
+        <a href="/login" class="explore-btn">Explore</a>
+    </section>
+
+    <section class="section aboutus">
+        <h3>About TravelGo</h3>
+        <p>TravelGo is your trusted partner for seamless travel experiences. Our mission is to make travel easy, affordable, and memorable for everyone. Whether you're planning a business trip or a family vacation, we bring you the best options for flights, trains, buses, and hotels—all in one place.</p>
+        <div class="about-highlights">
+            <div class="about-highlight"><i class="fas fa-check-circle"></i> Trusted by thousands</div>
+            <div class="about-highlight"><i class="fas fa-headset"></i> 24/7 Customer Support</div>
+            <div class="about-highlight"><i class="fas fa-tags"></i> Best Price Guarantee</div>
+            <div class="about-highlight"><i class="fas fa-globe"></i> Worldwide Coverage</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Meet the Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+                <div class="name">Amit Sharma</div>
+                <div class="role">Founder & CEO</div>
+            </div>
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+                <div class="name">Priya Verma</div>
+                <div class="role">Head of Operations</div>
+            </div>
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Team Member">
+                <div class="name">Rahul Mehra</div>
+                <div class="role">Lead Developer</div>
+            </div>
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member">
+                <div class="name">Sneha Patel</div>
+                <div class="role">Customer Success</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Why Choose TravelGo?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <img src="/static/images/flight-icon.jpeg" alt="Flights">
+                <div class="feature-title">Flights</div>
+                <div class="feature-desc">Book domestic and international flights at the best prices.</div>
+            </div>
+            <div class="feature-card">
+                <img src="/static/images/train-icon.jpeg" alt="Trains">
+                <div class="feature-title">Trains</div>
+                <div class="feature-desc">Find and reserve train tickets for your next adventure.</div>
+            </div>
+            <div class="feature-card">
+                <img src="/static/images/bus-icon.jpeg" alt="Buses">
+                <div class="feature-title">Buses</div>
+                <div class="feature-desc">Travel comfortably with our wide range of bus options.</div>
+            </div>
+            <div class="feature-card">
+                <img src="/static/images/hotel.jpg" alt="Hotels">
+                <div class="feature-title">Hotels</div>
+                <div class="feature-desc">Book hotels and stays at top destinations worldwide.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">How It Works</h2>
+        <div class="how-it-works">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>Search for flights, trains, buses, or hotels</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>Book your preferred option in a few clicks</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>Get ready to travel and enjoy your journey!</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <img class="avatar" src="https://randomuser.me/api/portraits/men/12.jpg" alt="User">
+                <div class="stars">★★★★★</div>
+                <div class="quote">"TravelGo made my family vacation so easy and affordable. Highly recommended!"</div>
+                <div class="name">Rohit S.</div>
+            </div>
+            <div class="testimonial">
+                <img class="avatar" src="https://randomuser.me/api/portraits/women/22.jpg" alt="User">
+                <div class="stars">★★★★★</div>
+                <div class="quote">"Excellent customer support and the best deals on flights!"</div>
+                <div class="name">Anjali K.</div>
+            </div>
+            <div class="testimonial">
+                <img class="avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt="User">
+                <div class="stars">★★★★★</div>
+                <div class="quote">"I booked my hotel and train tickets in minutes. Super smooth experience."</div>
+                <div class="name">Vikram P.</div>
+            </div>
+            <div class="testimonial">
+                <img class="avatar" src="https://randomuser.me/api/portraits/women/36.jpg" alt="User">
+                <div class="stars">★★★★★</div>
+                <div class="quote">"TravelGo is my go-to for all my business trips. Love the interface!"</div>
+                <div class="name">Meera D.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Partners & Awards</h2>
+        <div class="partners">
+            <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Air_India_Logo.svg" alt="Air India"></div>
+            <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/IRCTC_Logo.svg" alt="IRCTC"></div>
+            <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/IndiGo_Logo.svg" alt="IndiGo"></div>
+            <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/SpiceJet_logo.svg" alt="SpiceJet"></div>
+            <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Tripadvisor_Logo.svg" alt="Tripadvisor"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-q">How do I book a ticket on TravelGo?</div>
+                <div class="faq-a">Simply search for your preferred travel option, select your choice, and follow the booking steps. It's quick and easy!</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Can I cancel or modify my booking?</div>
+                <div class="faq-a">Yes, you can manage your bookings from your dashboard. Cancellation and modification policies depend on the provider.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is my payment information secure?</div>
+                <div class="faq-a">Absolutely! We use industry-standard encryption to keep your data safe and secure.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">How do I contact customer support?</div>
+                <div class="faq-a">You can reach us 24/7 via the contact form below or email us at support@travelgo.com.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Blog Highlights</h2>
+        <div class="blog-highlights">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Blog 1">
+                <div class="blog-title">Top 10 Destinations for 2025</div>
+                <div class="blog-excerpt">Discover the hottest travel spots for the coming year and why you should visit them.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1502920917128-1aa500764ce0?auto=format&fit=crop&w=400&q=80" alt="Blog 2">
+                <div class="blog-title">How to Save on Flights</div>
+                <div class="blog-excerpt">Our top tips for finding the best deals and making your travel budget go further.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80" alt="Blog 3">
+                <div class="blog-title">Packing Like a Pro</div>
+                <div class="blog-excerpt">Learn how to pack efficiently for any trip, from weekend getaways to world tours.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="newsletter" style="max-width:600px;">
+            <form onsubmit="event.preventDefault(); alert('Thank you for contacting us!');">
+                <input type="text" placeholder="Your Name" required style="margin-bottom:10px;width:90%;max-width:320px;"><br>
+                <input type="email" placeholder="Your Email" required style="margin-bottom:10px;width:90%;max-width:320px;"><br>
+                <textarea placeholder="Your Message" required style="padding:12px 16px;border-radius:8px;border:1px solid #b3d8f7;font-size:1rem;width:90%;max-width:320px;height:80px;margin-bottom:10px;"></textarea><br>
+                <button type="submit">Send Message</button>
+            </form>
+            <div style="margin-top:18px;color:#3498db;font-weight:600;">Email: support@travelgo.com | Phone: +91-12345-67890<br>Address: 123, Main Street, Mumbai, India</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="newsletter">
+            <h3 style="color:#3498db; font-weight:600; margin-bottom:12px;">Stay Updated!</h3>
+            <p style="color:#555; margin-bottom:18px;">Subscribe to our newsletter for the latest deals and travel tips.</p>
+            <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="socials">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div style="margin-bottom:8px;">&copy; 2025 TravelGo. All rights reserved.</div>
+        <div style="font-size:0.95em; color:#eaf6ff;">Your trusted partner for all your travel needs.</div>
+    </footer>
+    <script>
+        // FAQ toggle
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', function() {
+                this.classList.toggle('open');
+                const answer = this.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

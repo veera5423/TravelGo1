@@ -1,131 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TravelGo - Registration</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .form-container {
-      background: rgba(255, 255, 255, 0.97);
-      padding: 40px 30px;
-      border-radius: 16px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-      width: 100%;
-      max-width: 460px;
-      text-align: center;
-    }
-
-    .form-container h2 {
-      margin-bottom: 24px;
-      color: #5a3ea1;
-      font-size: 28px;
-    }
-
-    .input-group {
-      position: relative;
-      margin: 15px 0;
-    }
-
-    .input-group i {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      color: #888;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px 12px 12px 40px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: border-color 0.3s;
-    }
-
-    input:focus {
-      border-color: #5a3ea1;
-      outline: none;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(90deg, #5a3ea1, #764ba2);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background: linear-gradient(90deg, #4a2f8c, #6533a2);
-    }
-
-    p, a {
-      margin-top: 16px;
-      font-size: 14px;
-      color: #444;
-    }
-
-    a {
-      color: #5a3ea1;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media screen and (max-width: 480px) {
-      .form-container {
-        padding: 30px 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TravelGo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(52,152,219,0.55) 60%, rgba(109,213,250,0.45) 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .register-container {
+            background: rgba(255,255,255,0.88);
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(52,152,219,0.13);
+            padding: 44px 32px 32px 32px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #3498db 30%, #6dd5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            margin-right: 10px;
+        }
+        .welcome-text {
+            font-size: 1.15rem;
+            color: #3498db;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .input-group {
+            position: relative;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 13px 44px 13px 14px;
+            border-radius: 10px;
+            border: 1px solid #b3d8f7;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.95);
+            transition: border 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .register-btn {
+            background: linear-gradient(90deg, #3498db, #6dd5fa);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 13px 0;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(52,152,219,0.07);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .register-btn:hover {
+            background: linear-gradient(90deg, #217dbb, #4fc3f7);
+            transform: translateY(-2px) scale(1.02);
+        }
+        .login-link {
+            margin-top: 18px;
+            color: #3498db;
+            font-size: 0.98rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s;
+        }
+        .login-link:hover {
+            color: #217dbb;
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .register-container { padding: 28px 6vw 18px 6vw; }
+        }
+    </style>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Register for TravelGo</h2>
-    <form method="POST" action="/register">
-      <div class="input-group">
-        <i class="fas fa-user"></i>
-        <input type="text" name="name" placeholder="Enter your name" required>
-      </div>
-      <div class="input-group">
-        <i class="fas fa-envelope"></i>
-        <input type="email" name="email" placeholder="Enter your email" required>
-      </div>
-      <div class="input-group">
-        <i class="fas fa-lock"></i>
-        <input type="password" name="password" placeholder="Enter your password" required>
-      </div>
-      <div class="input-group">
-        <i class="fas fa-lock"></i>
-        <input type="password" name="confirm_password" placeholder="Confirm your password" required>
-      </div>
-      <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
-  </div>
+    <div class="register-container">
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="24" cy="24" rx="22" ry="16" fill="#fff" fill-opacity="0.18"/>
+                <path d="M10 32L38 16M10 16L38 32" stroke="#3498db" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="7" fill="#6dd5fa" stroke="#3498db" stroke-width="2.5"/>
+            </svg>
+            TravelGo
+        </div>
+        <div class="welcome-text">Create your account to start your journey with TravelGo.</div>
+        <form method="POST" action="/register">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="confirm_password" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+        <a href="{{ url_for('login') }}" class="login-link">Already have an account? Login</a>
+    </div>
 </body>
 </html>
