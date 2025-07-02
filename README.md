@@ -1,4 +1,4 @@
-# TravelGo – Your All-in-One Travel Booking Companion
+![Screenshot 2025-07-02 155340](https://github.com/user-attachments/assets/ac2b435b-ea13-4f2e-90f1-3aa4974570bf)# TravelGo – Your All-in-One Travel Booking Companion
 
 TravelGo is a full-stack travel booking web application developed with **Flask**, **MongoDB**, and integrated AWS services including **DynamoDB**, **SNS**, **IAM Roles**, and **EC2**. It allows users to search, filter, and book **buses**, **trains**, **flights**, **cabs**, and **hotels** with real-time seat selection, sorting, booking confirmation, and account management.
 
@@ -60,11 +60,31 @@ $ flask run
 
 ---
 
-## 📷 Screenshots (To be uploaded)
+## 📷 Screenshots 
 
 > *These will visually showcase the user experience.*
 
-* [ ] Home Page with Search Forms
+* [Welcome pages](https://github.com/user-attachments/assets/a2b789de-000e-4ac5-8125-0c92e58ffd1d)
+ ] [2](https://github.com/user-attachments/assets/d54f4358-4047-4992-a166-5237278d7bd4)
+![3](https://github.com/user-attachments/assets/146abdbe-bafc-4c0d-a4ef-440b1deacd20)
+
+ Home Page with Search Forms
+ *[Login Page](https://github.com/user-attachments/assets/27709bca-65be-4cb6-91c7-1810823b69b1)
+ *[Register Page](https://github.com/user-attachments/assets/5077e5c4-f811-4538-aea3-caf13bf3fbcf)
+ *[dashboard](https://github.com/user-attachments/assets/73ac7900-06a4-4516-81e7-524bace70672)
+ *![bus booking](https://github.com/user-attachments/assets/8dcec84e-f2c3-45e2-b0ca-f26f6519fff8)
+ *![train booking](https://github.com/user-attachments/assets/e87bafe9-d2dc-4cec-9d5f-e2472f485128)
+ *![confirmation page](https://github.com/user-attachments/assets/a11d6307-f4fb-449a-accd-4b309932f989)
+ ![flight page](https://github.com/user-attachments/assets/830b3c73-8130-4917-b6f6-629639b604f2)
+ ![hotel booking](https://github.com/user-attachments/assets/7470c7a7-14d3-4d0b-8364-4ea8a6d924ea)
+ ![Booking History](https://github.com/user-attachments/assets/edad84be-bb0a-4452-b13b-ab3d90f5b68f)
+
+
+
+
+
+
+
 * [ ] Bus Results with Filters
 * [ ] Flight Booking Confirmation
 * [ ] Seat Selection Interface
