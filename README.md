@@ -64,9 +64,9 @@ $ flask run
 
 > *These will visually showcase the user experience.*
 
-* [1](https://github.com/user-attachments/assets/a2b789de-000e-4ac5-8125-0c92e58ffd1d)
-* [2](https://github.com/user-attachments/assets/d54f4358-4047-4992-a166-5237278d7bd4)
-![3](https://github.com/user-attachments/assets/146abdbe-bafc-4c0d-a4ef-440b1deacd20)
+* ![](https://github.com/user-attachments/assets/a2b789de-000e-4ac5-8125-0c92e58ffd1d)
+* ![](https://github.com/user-attachments/assets/d54f4358-4047-4992-a166-5237278d7bd4)
+*![3](https://github.com/user-attachments/assets/146abdbe-bafc-4c0d-a4ef-440b1deacd20)
 
  Home Page with Search Forms
  *[Login Page](https://github.com/user-attachments/assets/27709bca-65be-4cb6-91c7-1810823b69b1)
