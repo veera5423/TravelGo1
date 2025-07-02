@@ -1,4 +1,4 @@
-![Screenshot 2025-07-02 155340](https://github.com/user-attachments/assets/ac2b435b-ea13-4f2e-90f1-3aa4974570bf)# TravelGo – Your All-in-One Travel Booking Companion
+# TravelGo – Your All-in-One Travel Booking Companion
 
 TravelGo is a full-stack travel booking web application developed with **Flask**, **MongoDB**, and integrated AWS services including **DynamoDB**, **SNS**, **IAM Roles**, and **EC2**. It allows users to search, filter, and book **buses**, **trains**, **flights**, **cabs**, and **hotels** with real-time seat selection, sorting, booking confirmation, and account management.
 
@@ -64,8 +64,8 @@ $ flask run
 
 > *These will visually showcase the user experience.*
 
-* [Welcome pages](https://github.com/user-attachments/assets/a2b789de-000e-4ac5-8125-0c92e58ffd1d)
- ] [2](https://github.com/user-attachments/assets/d54f4358-4047-4992-a166-5237278d7bd4)
+* (https://github.com/user-attachments/assets/a2b789de-000e-4ac5-8125-0c92e58ffd1d)
+* [2](https://github.com/user-attachments/assets/d54f4358-4047-4992-a166-5237278d7bd4)
 ![3](https://github.com/user-attachments/assets/146abdbe-bafc-4c0d-a4ef-440b1deacd20)
 
  Home Page with Search Forms
@@ -85,10 +85,7 @@ $ flask run
 
 
 
-* [ ] Bus Results with Filters
-* [ ] Flight Booking Confirmation
-* [ ] Seat Selection Interface
-* [ ] User Dashboard with Booking History
+
 
 ---
 
